@@ -6,4 +6,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-slides>
+    <ion-slide style="height:100%" *ngFor="let img of images">
+        <ion-card color="light">
+          <ion-card-title style="text-align:center;padding-top:0px">
+            <ion-img [src]="img.imgPath"></ion-img>
+            <ion-item lines="none">
+              <ion-icon color="primary" slot="start" style="zoom:1.3;padding-top:0px" name="heart-empty"></ion-icon> <a>{{img.likes}}</a>
+            </ion-item>
+          </ion-card-title>
+          <ion-item lines="none">
+            <ion-textarea slot="start" placeholder="Add comment" clear-on-edit="true"></ion-textarea>
+            <ion-button size="small" shape="round" fill="outline" slot="end" expand="full" color="primary">send</ion-button>
+          </ion-item>
+        </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
