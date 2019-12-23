@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Memes
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,12 +13,16 @@
           <ion-card-title style="text-align:center;padding-top:0px">
             <ion-img [src]="img.imgPath"></ion-img>
             <ion-item lines="none">
-              <ion-icon color="primary" slot="start" style="zoom:1.3;padding-top:0px" name="heart-empty"></ion-icon> <a>{{img.likes}}</a>
+              <ion-icon (click)="like(img.id)" *ngIf="img.likes === 0" color="primary" slot="start" style="zoom:1.5;padding-top:0px" name="heart-empty"></ion-icon><p slot="end" *ngIf="img.likes === 0" style="padding-left:0px;">0 likes</p>
+              <ion-icon (click)="like(img.id)" *ngIf="img.likes === 1" color="primary" slot="start" style="zoom:1.5;padding-top:0px" name="heart"></ion-icon><p slot="end" *ngIf="img.likes === 1" style="padding-left:0px;">1 like</p>
+              <ion-icon (click)="like(img.id)" *ngIf="img.likes > 1" color="primary" slot="start" style="zoom:1.5;padding-top:0px" name="heart"></ion-icon><p slot="end" *ngIf="img.likes > 1" style="padding-left:0px;">{{img.likes}} likes</p>
             </ion-item>
           </ion-card-title>
           <ion-item lines="none">
-            <ion-textarea slot="start" placeholder="Add comment" clear-on-edit="true"></ion-textarea>
-            <ion-button size="small" shape="round" fill="outline" slot="end" expand="full" color="primary">send</ion-button>
+            <ion-textarea *ngIf="img.comments?.length === 0" [(ngModel)]="comment" slot="start" placeholder="Add comment" clear-on-edit="true"></ion-textarea>
+            <a slot="end" (click)="presentModal(img.id)" *ngIf="img.comments?.length > 1">{{img.comments.length}} Comments</a>
+            <a slot="end" (click)="presentModal(img.id)" *ngIf="img.comments?.length === 1">{{img.comments.length}} Comment</a>
+            <ion-button *ngIf="img.comments?.length === 0" (click)="send(img.id,comment)" size="small" shape="round" fill="outline" slot="end" expand="full" color="primary">send</ion-button>
           </ion-item>
         </ion-card>
     </ion-slide>

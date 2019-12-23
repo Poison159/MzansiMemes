@@ -1,6 +1,6 @@
 export interface IMeme {
     id:             number;
     imgPath:           string;
-    likes:            any[];
+    likes:            number;
     comments:            any[];
 }
