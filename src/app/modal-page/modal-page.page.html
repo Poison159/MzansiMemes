@@ -1,13 +1,13 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Comments</ion-title>
-    <ion-icon (click)="dismiss()" style="zoom:1.1; padding-right:10px;" name="close" slot="end"></ion-icon>
+    <ion-icon (click)="dismiss()" style="zoom:1.5; padding-right:10px;" name="close" slot="end"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-item>
-  <ion-textarea [(ngModel)]="comment" slot="start" placeholder="Add comment" clear-on-edit="true"></ion-textarea>
+<ion-item lines="none">
+  <ion-textarea rows={6} cols={80} [(ngModel)]="comment" placeholder="Add comment" clear-on-edit="true"></ion-textarea>
   <ion-button  (click)="send(id,comment)" size="small" shape="round" fill="outline" slot="end" expand="full" color="primary">send</ion-button>
 </ion-item>
   <ion-card *ngFor="let comm of comments">

@@ -1,5 +1,7 @@
 {
   "name": "MzansiMemes",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
