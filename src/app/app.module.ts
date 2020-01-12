@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalPagePage } from './modal-page/modal-page.page';
 import { ModalPagePageModule } from './modal-page/modal-page.module';
+import { Facebook } from '@ionic-native/facebook/ngx';
 
 
 @NgModule({
@@ -21,8 +22,10 @@ import { ModalPagePageModule } from './modal-page/modal-page.module';
   providers: [
     StatusBar,
     SplashScreen,
+    Facebook,
     MemesService,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Facebook
   ],
   bootstrap: [AppComponent]
 

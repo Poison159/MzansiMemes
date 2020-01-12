@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "795382770978",
+    "firebase_url": "https://mzansimemes-3ca9a.firebaseio.com",
+    "project_id": "mzansimemes-3ca9a",
+    "storage_bucket": "mzansimemes-3ca9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795382770978:android:ed7d5dd21cda2982c0897b",
+        "android_client_info": {
+          "package_name": "com.realninjas.mzansimemes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "795382770978-uvrviugbvvgv50aboir0nm5i4vi3rqvp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.realninjas.mzansimemes",
+            "certificate_hash": "2deb0f3f77ab6bbfc43486f11a5a7c04a2aa79cb"
+          }
+        },
+        {
+          "client_id": "795382770978-7j16gok9ce2ninn6f5hv0uhob5egti6i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDut1T8GEXCLmP0UkBdqLif2btS9wocE0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "795382770978-7j16gok9ce2ninn6f5hv0uhob5egti6i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

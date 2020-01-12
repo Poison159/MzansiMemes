@@ -5,10 +5,10 @@ import { IMeme } from './Meme';
 
 @Injectable()
 export class MemesService {
-    private _memesUrl = "https://mememzansi.conveyor.cloud/api/Memes";
-    private _addCommentUrl = "https://mememzansi.conveyor.cloud/api/AddComment";
-    private _addLikeUrl = "https://mememzansi.conveyor.cloud/api/AddLike";
-    private _removeLikeUrl = "https://mememzansi.conveyor.cloud/api/RemoveLike";
+    private _memesUrl = "https://samemes.conveyor.cloud/api/Memes";
+    private _addCommentUrl = "https://samemes.conveyor.cloud/api/AddComment";
+    private _addLikeUrl = "https://samemes.conveyor.cloud/api/AddLike";
+    private _removeLikeUrl = "https://samemes.conveyor.cloud/api/RemoveLike";
     
 
     constructor(private http: HttpClient){}

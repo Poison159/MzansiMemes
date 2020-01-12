@@ -83,5 +83,21 @@ export class Tab2Page implements OnInit {
     });
     return await modal.present();
   }
+  doRefresh(event) {
+    this.memesService.getMemes()
+    .subscribe(
+        (data: IMeme[]) => this.images = data,
+        (err: any) => {
+          console.log(err);
+        },
+        () => {
+          console.log('All done getting Memes');
+        }
+    );
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
 
 }
