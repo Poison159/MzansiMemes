@@ -1,8 +1,8 @@
 import { ModalPagePage } from './../modal-page/modal-page.page';
 import { MemesService } from './memesService';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IMeme } from './Meme';
-import { LoadingController, ToastController, ModalController, NavParams } from '@ionic/angular';
+import { LoadingController, ToastController, ModalController, NavParams, IonSlides } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -10,6 +10,7 @@ import { LoadingController, ToastController, ModalController, NavParams } from '
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page implements OnInit {
+  @ViewChild(IonSlides, null) slides: IonSlides;
   private images: IMeme[];
   private image: IMeme;
   private comment: string;
@@ -18,7 +19,6 @@ export class Tab2Page implements OnInit {
   constructor(private memesService: MemesService,private loadingController: LoadingController, public toastController: ToastController, 
               public modalController: ModalController) {}
   async ngOnInit(){
-    //this.images = [0, 1, 2, 3, 4, 5, 6].map(() => `https://picsum.photos/1080/1920?random&t=${Math.random()}`);
     console.log('Fetching from service...');
     const loading = await this.loadingController.create({
       message: 'Fetching Memes...'
@@ -60,7 +60,7 @@ export class Tab2Page implements OnInit {
   }
 
   async like(id){
-    let liked: Boolean;
+    let liked: boolean;
     if (this.likes.find(x => x === id)) {
       liked = true;
       this.likes = this.likes.filter(x => x !== id);
@@ -84,6 +84,7 @@ export class Tab2Page implements OnInit {
     return await modal.present();
   }
   doRefresh(event) {
+    this.slides.slideTo(0, 500);
     this.memesService.getMemes()
     .subscribe(
         (data: IMeme[]) => this.images = data,
